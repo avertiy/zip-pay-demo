@@ -1,0 +1,1 @@
+﻿sorry but no time for writing integration tests at the moment, may be later
