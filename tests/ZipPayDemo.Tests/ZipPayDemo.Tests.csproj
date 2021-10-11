@@ -27,8 +27,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\ZipPayDemo.Api\ZipPayDemo.Api.csproj" />
     <ProjectReference Include="..\..\src\ZipPayDemo.Application\ZipPayDemo.Application.csproj" />
-    <ProjectReference Include="..\..\ZipPayDemo.Domain\ZipPayDemo.Domain.csproj" />
-    <ProjectReference Include="..\..\ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\ZipPayDemo.Domain\ZipPayDemo.Domain.csproj" />
+    <ProjectReference Include="..\..\src\ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

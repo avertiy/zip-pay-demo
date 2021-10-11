@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ZipPayDemo.Domain\ZipPayDemo.Domain.csproj" />
-    <ProjectReference Include="..\..\ZipPayDemo.Infrastructure\ZipPayDemo.Infrastructure.csproj" />
+    <ProjectReference Include="..\ZipPayDemo.Domain\ZipPayDemo.Domain.csproj" />
+    <ProjectReference Include="..\ZipPayDemo.Infrastructure\ZipPayDemo.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

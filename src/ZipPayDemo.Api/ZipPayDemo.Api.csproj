@@ -39,8 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj" />
     <ProjectReference Include="..\ZipPayDemo.Application\ZipPayDemo.Application.csproj" />
+    <ProjectReference Include="..\ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
