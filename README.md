@@ -1,6 +1,6 @@
 # Zip Candidate User API Challenge: C#
-We have a fictitious scenario where we'd like to build an API to manage Zip Pay users. We require the ability to create, get, and list users. Once we create users, we need the ability for the user to create an account.
-
+We have a fictitious scenario where we'd like to build an API to manage Zip Pay users. 
+We require the ability to create, get, and list users. Once we create users, we need the ability for the user to create an account.
 This should be implemented with an API and database.
 
 ## Business Requirements
@@ -45,6 +45,6 @@ Users and accounts should persist to a database of your choice
 
 ## Definition of Done
 
-This solution should be what you consider to be production ready, so think carefully about what you want to include. Please submit as a git repo and send us a link when done.
-
+This solution should be what you consider to be production ready, so think carefully about what you want to include. 
+Please submit as a git repo and send us a link when done.
 We value your time, so we don't want you to spend a massive amount of time on this so we'd recommend spending around 3-4 hours on this.

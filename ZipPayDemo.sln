@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipPayDemo.Api", "src\ZipPayDemo.Api\ZipPayDemo.Api.csproj", "{0652E430-24A1-429D-B9C8-FC5E308D77FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipPayDemo.Tests", "tests\ZipPayDemo.Tests\ZipPayDemo.Tests.csproj", "{07F900FC-80A1-4FFA-A652-2A070B4E337D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F45C433C-D573-4C9D-813E-D237350CAF84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipPayDemo.Application", "src\ZipPayDemo.Application\ZipPayDemo.Application.csproj", "{D6B99ED4-892A-4B77-B39C-B15D19709890}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{52C4C875-77A9-48B9-8B6C-E956D2760B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Domain", "ZipPayDemo.Domain\ZipPayDemo.Domain.csproj", "{39697FCF-AC2E-4D47-B0AD-46272ECA380F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Persistence", "ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj", "{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Infrastructure", "ZipPayDemo.Infrastructure\ZipPayDemo.Infrastructure.csproj", "{160B657E-B5C4-44D3-803F-9BA3ED977D09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0652E430-24A1-429D-B9C8-FC5E308D77FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0652E430-24A1-429D-B9C8-FC5E308D77FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0652E430-24A1-429D-B9C8-FC5E308D77FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0652E430-24A1-429D-B9C8-FC5E308D77FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F900FC-80A1-4FFA-A652-2A070B4E337D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F900FC-80A1-4FFA-A652-2A070B4E337D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F900FC-80A1-4FFA-A652-2A070B4E337D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F900FC-80A1-4FFA-A652-2A070B4E337D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6B99ED4-892A-4B77-B39C-B15D19709890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6B99ED4-892A-4B77-B39C-B15D19709890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6B99ED4-892A-4B77-B39C-B15D19709890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6B99ED4-892A-4B77-B39C-B15D19709890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39697FCF-AC2E-4D47-B0AD-46272ECA380F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39697FCF-AC2E-4D47-B0AD-46272ECA380F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39697FCF-AC2E-4D47-B0AD-46272ECA380F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39697FCF-AC2E-4D47-B0AD-46272ECA380F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160B657E-B5C4-44D3-803F-9BA3ED977D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160B657E-B5C4-44D3-803F-9BA3ED977D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160B657E-B5C4-44D3-803F-9BA3ED977D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160B657E-B5C4-44D3-803F-9BA3ED977D09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07F900FC-80A1-4FFA-A652-2A070B4E337D} = {52C4C875-77A9-48B9-8B6C-E956D2760B13}
+		{D6B99ED4-892A-4B77-B39C-B15D19709890} = {F45C433C-D573-4C9D-813E-D237350CAF84}
+		{39697FCF-AC2E-4D47-B0AD-46272ECA380F} = {F45C433C-D573-4C9D-813E-D237350CAF84}
+		{9343BF78-A7BA-417D-81F0-A95E5E36DEFC} = {F45C433C-D573-4C9D-813E-D237350CAF84}
+		{160B657E-B5C4-44D3-803F-9BA3ED977D09} = {F45C433C-D573-4C9D-813E-D237350CAF84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C44C029-3DEE-4A54-A93B-A1C4CE747848}
+	EndGlobalSection
+EndGlobal
