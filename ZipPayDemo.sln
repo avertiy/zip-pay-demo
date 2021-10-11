@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipPayDemo.Application", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{52C4C875-77A9-48B9-8B6C-E956D2760B13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Domain", "ZipPayDemo.Domain\ZipPayDemo.Domain.csproj", "{39697FCF-AC2E-4D47-B0AD-46272ECA380F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Domain", "src\ZipPayDemo.Domain\ZipPayDemo.Domain.csproj", "{39697FCF-AC2E-4D47-B0AD-46272ECA380F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Persistence", "ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj", "{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Persistence", "src\ZipPayDemo.Persistence\ZipPayDemo.Persistence.csproj", "{9343BF78-A7BA-417D-81F0-A95E5E36DEFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Infrastructure", "ZipPayDemo.Infrastructure\ZipPayDemo.Infrastructure.csproj", "{160B657E-B5C4-44D3-803F-9BA3ED977D09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPayDemo.Infrastructure", "src\ZipPayDemo.Infrastructure\ZipPayDemo.Infrastructure.csproj", "{160B657E-B5C4-44D3-803F-9BA3ED977D09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
