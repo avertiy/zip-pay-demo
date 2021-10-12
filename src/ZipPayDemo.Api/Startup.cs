@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using ZipPayDemo.Api.Data;
+using ZipPayDemo.Application;
+using ZipPayDemo.Application.Users.Command.CreateUser;
 using ZipPayDemo.Infrastructure;
 using ZipPayDemo.Persistence;
 
@@ -32,8 +35,10 @@ namespace ZipPayDemo.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Zip Pay API", Version = "v1" });
             });
+            services.AddAutoMapper(typeof(AutoMapperProfile));
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            var assembly = typeof(CreateUserCommandHandler).Assembly;
+            services.AddMediatR(assembly);
             ConfigureDatabaseServices(services);
 
             // configure DI for application services
