@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TanvirArjel.EFCore.GenericRepository;
 using ZipPayDemo.Api;
 using ZipPayDemo.Api.Data;
 using ZipPayDemo.Api.SeedData;
@@ -27,6 +28,7 @@ namespace ZipPayDemo.Tests.IntegrationTests.Setup
                 {
                     options.UseInMemoryDatabase("InMemory", _databaseRoot).UseInternalServiceProvider(sp);
                 });
+            services.AddGenericRepository<DataContext>();
         }
 
         protected override void EnsureDatabaseCreated(DataContext context)

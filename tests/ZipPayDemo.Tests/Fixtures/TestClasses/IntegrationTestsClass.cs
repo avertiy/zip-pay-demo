@@ -184,6 +184,17 @@ namespace ZipPayDemo.Tests.Fixtures.TestClasses
         public StringContent Content { get; set; }
         public Uri Uri => new Uri(Url, UriKind.Relative);
 
+        public TestRequest()
+        {
+        }
+
+        public TestRequest(string url, object data, string method = "POST")
+        {
+            Url = url;
+            Content = new StringContent(data.ToJsonString(), Encoding.UTF8, "application/json");
+            HttpMethod = method;
+        }
+
         public static implicit operator TestRequest(string url)
         {
             return new TestRequest() { Url = url };
