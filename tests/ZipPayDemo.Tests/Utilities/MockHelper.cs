@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Moq;
 
-namespace ZipPayDemo.Tests.Fixtures
+namespace ZipPayDemo.Tests.Utilities
 {
     public static class MockHelper
     {

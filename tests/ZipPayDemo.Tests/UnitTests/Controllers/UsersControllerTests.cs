@@ -12,6 +12,7 @@ using ZipPayDemo.Application.Users.Command.CreateUser;
 using ZipPayDemo.Application.Users.Query.GetUser;
 using ZipPayDemo.Application.Users.Query.GetUsers;
 using ZipPayDemo.Tests.Fixtures;
+using ZipPayDemo.Tests.Fixtures.TestClasses;
 using ZipPayDemo.Tests.Utilities.Extensions;
 
 namespace ZipPayDemo.Tests.UnitTests.Controllers

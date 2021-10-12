@@ -9,6 +9,7 @@ using Xunit;
 using ZipPayDemo.Domain.Entities;
 using ZipPayDemo.Infrastructure.Services;
 using ZipPayDemo.Tests.Fixtures;
+using ZipPayDemo.Tests.Fixtures.TestClasses;
 
 namespace ZipPayDemo.Tests.UnitTests.Services
 {
@@ -28,7 +29,7 @@ namespace ZipPayDemo.Tests.UnitTests.Services
         [Theory]
         [InlineData(0, 10)]
         [InlineData(1, 2)]
-        public async Task GetAllAsync_Should_Return_Users(int skip, int take)
+        public async Task GetAllAsync_Should_Apply_Skip_And_Take_Correctly(int skip, int take)
         {
             //arrange
             Mock<IRepository>()
@@ -51,7 +52,7 @@ namespace ZipPayDemo.Tests.UnitTests.Services
         }
 
         [Fact]
-        public async Task GetAllAsync_when_take_invalid_throw_exception()
+        public async Task GetAllAsync_Should_Throw_When_Invalid_Parameters()
         {
             //arrange
             Mock<IRepository>()
@@ -63,7 +64,7 @@ namespace ZipPayDemo.Tests.UnitTests.Services
         }
 
         [Fact]
-        public async Task GetByIdAsync_returns_user()
+        public async Task GetByIdAsync_Should_Return_user()
         {
             //arrange
             Mock<IRepository>()
@@ -75,14 +76,14 @@ namespace ZipPayDemo.Tests.UnitTests.Services
 
             //assert
             Assert.NotNull(user);
-            Assert.Equal(user.Name, "user1");
+            Assert.Equal("user1", user.Name);
         }
 
         [Theory]
         [InlineData("user1@email.com")]
         [InlineData("user2@email.com")]
         [InlineData("")]
-        public async Task GetUserByEmailAsync_returns_user(string email)
+        public async Task GetUserByEmailAsync_Should_Return_User(string email)
         {
             //arrange
             Mock<IRepository>().Setup(s => 
@@ -103,7 +104,5 @@ namespace ZipPayDemo.Tests.UnitTests.Services
                 Assert.Equal(user.Email, email);
             }
         }
-
-        
     }
 }

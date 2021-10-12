@@ -6,7 +6,7 @@ namespace ZipPayDemo.Application.Users.Query.GetUser
     {
         public GetUserQueryValidator()
         {
-            RuleFor(x => x.UserId).GreaterThanOrEqualTo(0);
+            RuleFor(x => x.UserId).GreaterThan(0);
         }
     }
 }

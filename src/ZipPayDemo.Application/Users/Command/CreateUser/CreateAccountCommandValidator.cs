@@ -22,7 +22,7 @@ namespace ZipPayDemo.Application.Users.Command.CreateUser
             ValidationContext<CreateUserCommand> ctx, CancellationToken cancellationToken)
         {
             var user = await _userService.GetUserByEmailAsync(email);
-            if (user == null)
+            if (user != null)
             {
                 ctx.AddFailure("Email", $"User with such email [{email}] already exists");
                 return false;

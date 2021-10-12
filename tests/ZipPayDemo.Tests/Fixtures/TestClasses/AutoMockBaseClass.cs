@@ -1,31 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading;
-using AutoFixture;
 using AutoMapper;
 using Microsoft.Extensions.Options;
 using Moq;
-using Newtonsoft.Json;
-using Xunit;
+using ZipPayDemo.Application;
+using ZipPayDemo.Tests.Utilities;
 
-namespace ZipPayDemo.Tests.Fixtures
+namespace ZipPayDemo.Tests.Fixtures.TestClasses
 {
-    [ExcludeFromCodeCoverage]
-    public abstract class AutoMockTestsClass<TTarget> : IClassFixture<CommonTestsFixture>
+    public abstract class AutoMockBaseClass<TTarget>
     {
         private readonly Dictionary<Type, Mock> _mocks;
-        private readonly CommonTestsFixture _testsFixture;
-        protected CancellationToken CancellationToken { get; }
+        private IMapper _mapper = null;
         protected TTarget Target { get; set; }
-        protected IMapper Mapper => _testsFixture.Mapper;
-        protected Fixture Fixture => _testsFixture.Fixture;
-        protected AutoMockTestsClass(CommonTestsFixture testsFixture)
+        protected CancellationToken CancellationToken { get; }
+
+        public IMapper Mapper
         {
-            _testsFixture = testsFixture;
+            get
+            {
+                if (_mapper == null)
+                {
+                    var configurationProvider = new MapperConfiguration(
+                        cfg => cfg.AddMaps(typeof(AutoMapperProfile)));
+                    _mapper = configurationProvider.CreateMapper();
+                }
+
+                return _mapper;
+            }
+        }
+
+        protected AutoMockBaseClass()
+        {
             var ctor = typeof(TTarget).GetConstructors().First(x => x.IsPublic);
             _mocks = MockHelper.CreateMocks(ctor);
             CancellationToken = It.IsAny<CancellationToken>();
@@ -50,23 +58,6 @@ namespace ZipPayDemo.Tests.Fixtures
         protected void SetupMapper<T>(T obj = null) where T : class, new()
         {
             Mock<IMapper>().Setup(x => x.Map<T>(It.IsAny<object>())).Returns(obj ?? new T());
-        }
-
-        protected HttpResponseMessage OkResponse(object content)
-        {
-            return new HttpResponseMessage
-            {
-                StatusCode = HttpStatusCode.OK,
-                Content = content != null ? new StringContent(JsonConvert.SerializeObject(content)) : null
-            };
-        }
-
-        protected HttpResponseMessage ErrorResponse()
-        {
-            return new HttpResponseMessage
-            {
-                StatusCode = HttpStatusCode.InternalServerError,
-            };
         }
 
         protected void SetupOptions<T>(T options) where T : class, new()
