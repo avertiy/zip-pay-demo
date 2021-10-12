@@ -1,33 +1,26 @@
-﻿using System.Net.Http;
+﻿using System.Threading.Tasks;
 using Xunit;
+using ZipPayDemo.Application.Users.Query.GetUsers;
+using ZipPayDemo.Tests.Fixtures.TestClasses;
 using ZipPayDemo.Tests.IntegrationTests.Setup;
 
 namespace ZipPayDemo.Tests.IntegrationTests.Controllers
 {
-    public class UserControllerIntegrationTests : IClassFixture<IntegrationTestsFixture>
+    public class UserControllerIntegrationTests : IntegrationTestsClass
     {
-        private readonly HttpClient _client;
-
-        public UserControllerIntegrationTests(IntegrationTestsFixture fixture)
+        public UserControllerIntegrationTests(ApiFactory factory) : base(factory)
         {
-            _client = fixture.CreateClient();
         }
 
-        //[Fact]
-        //public async Task Can_Get_Users()
-        //{
-        //    var httpResponse = await _client.GetAsync("/api/users");
-
-        //    // Must be successful.
-        //    httpResponse.EnsureSuccessStatusCode();
-
-        //    // Deserialize and examine results.
-        //    var users = await httpResponse.ReadBody<IEnumerable<UserModel>>(); 
-            
-        //    Assert.NotNull(users);
-        //    Assert.Contains(users, a => a.Name == "user1");
-        //    Assert.Contains(users, a => a.Name == "user2");
-        //}
+        [Fact]
+        public async Task GetUsers_Test200Status()
+        {
+            await Test200OkResult<GetUsersResponse>("/api/users", x =>
+            {
+                Assert.Contains(x.Users, a => a.Name == "user1");
+                Assert.Contains(x.Users, a => a.Name == "user2");
+            });
+        }
 
         //[Theory]
         //[InlineData(1)]
@@ -53,5 +46,6 @@ namespace ZipPayDemo.Tests.IntegrationTests.Controllers
 
         //    Assert.Equal(HttpStatusCode.OK, httpResponse.StatusCode);
         //}
+
     }
 }

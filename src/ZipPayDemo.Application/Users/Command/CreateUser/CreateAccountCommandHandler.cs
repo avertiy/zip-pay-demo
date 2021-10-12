@@ -27,14 +27,14 @@ namespace ZipPayDemo.Application.Users.Command.CreateUser
             {
                 _logger.LogInformation("Start handling {request}: {requestJson}", nameof(CreateUserCommand), requestJson);
 
-                var account = new User
+                var user = new User
                 {
                     Email = request.Email,
                     MonthlySalary = request.MonthlySalary,
                     MonthlyExpenses = request.MonthlyExpenses,
                     Name = request.Name
                 };
-                await _userService.CreateUserAsync(account);
+                await _userService.CreateUserAsync(user);
                 return new CreateUserResponse() { Success = true };
             }
             catch (Exception ex)
